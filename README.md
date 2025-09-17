@@ -29,11 +29,12 @@ Dataset source: [HAM10000 on Kaggle](https://www.kaggle.com/datasets/kmader/skin
 
 ---
 
-## 🛠️ Tech Stack  
+##  Tech Stack  
 - **Python**   
 - **TensorFlow / Keras** for deep learning  
 - **NumPy, Pandas** for data handling  
-- **Matplotlib, Seaborn** for visualization  
+- **Matplotlib** for visualization
+- **Flask** for Web App
 
 ---
 
@@ -55,7 +56,7 @@ Dataset source: [HAM10000 on Kaggle](https://www.kaggle.com/datasets/kmader/skin
 
 ---
 
-## 🚀 How to Run  
+##  How to Run  
 
 1. Clone the repository  
    ```bash
