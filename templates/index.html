@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Deep Learning Based Skin Disease Classification</h1>
+    <p class="subtitle">Upload or drag a skin lesion image to detect possible conditions.</p>
+
+    <form method="post" enctype="multipart/form-data" class="upload-form">
+        <!-- Upload Box -->
+        <label class="upload-box" id="dropArea">
+            <input type="file" name="file" id="fileInput" onchange="previewFile()" required hidden>
+            <span id="fileLabel">Click or drag an image here</span>
+        </label>
+
+        <!-- Image Preview -->
+        <div class="preview" id="preview" style="display: none;">
+            <h3>Preview:</h3>
+            <img id="previewImg" src="" alt="Image Preview">
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="predict-btn">Predict</button>
+    </form>
+
+    <!-- Prediction Result -->
+    {% if result %}
+    <div class="result-card">
+        <h2>Prediction Result</h2>
+        <p>{{ result }}</p>
+        {% if image_path %}
+        <img src="{{ image_path }}" alt="Uploaded Image">
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+
+
+<script>
+const dropArea = document.getElementById("dropArea");
+const fileInput = document.getElementById("fileInput");
+const fileLabel = document.getElementById("fileLabel");
+const previewDiv = document.getElementById("preview");
+const previewImg = document.getElementById("previewImg");
+
+// Prevent default browser behavior
+["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
+  dropArea.addEventListener(eventName, e => e.preventDefault());
+});
+
+// Highlight drop area
+["dragenter", "dragover"].forEach(eventName => {
+  dropArea.addEventListener(eventName, () => dropArea.classList.add("highlight"));
+});
+
+["dragleave", "drop"].forEach(eventName => {
+  dropArea.addEventListener(eventName, () => dropArea.classList.remove("highlight"));
+});
+
+// Handle file drop
+dropArea.addEventListener("drop", e => {
+  const files = e.dataTransfer.files;
+  if (files.length > 0) {
+    fileInput.files = files; // assign dropped file
+    previewFile();
+  }
+});
+
+// Preview function
+function previewFile() {
+  if (fileInput.files.length > 0) {
+    fileLabel.textContent = fileInput.files[0].name;
+    const reader = new FileReader();
+    reader.onload = e => {
+      previewImg.src = e.target.result;
+      previewDiv.style.display = "block";
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+  }
+}
+</script>
+{% endblock %}
+

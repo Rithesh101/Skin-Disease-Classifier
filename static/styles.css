@@ -1,0 +1,174 @@
+/* === GLOBAL === */
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: #f4f6fb;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background: linear-gradient(90deg, #6c63ff, #00c6ff);
+    padding: 1rem;
+    color: #fff;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-links a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* === MAIN CONTAINER === */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* === UPLOAD BOX === */
+.upload-box {
+    border: 2px dashed #6c63ff;
+    padding: 2rem;
+    border-radius: 12px;
+    background: #fafaff;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.upload-box.highlight {
+    border-color: #00c6ff;
+    background: #eef7ff;
+}
+
+/* Hide actual input */
+input[type="file"] {
+    display: none;
+}
+
+/* === BUTTON === */
+button {
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #5848d2;
+}
+
+/* === PREVIEW === */
+.preview {
+    margin: 1rem 0;
+    display: none;
+}
+
+.preview img {
+    max-width: 220px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* === RESULT CARD === */
+.result-card {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #e8f5e9;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.result-card img {
+    max-width: 260px;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+/* === DISEASE INFO GRID === */
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.disease-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.symptoms {
+    font-size: 0.95rem;
+    color: #b03a2e;
+    font-weight: 500;
+}
